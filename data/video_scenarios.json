@@ -1,0 +1,330 @@
+[
+  {
+    "video_id": "SURV-01",
+    "domain": "Surveillance_Security",
+    "title": "Perimeter Fence Breach Incident",
+    "duration_sec": 120.0,
+    "fps": 30.0,
+    "query_prompt": "Locate the moments when the trespasser approaches the fence, cuts the wire, and enters the secure compound.",
+    "ground_truth_events": [
+      {"event_id": "SURV-01-E1", "label": "Suspect Approaching Fence", "start_sec": 14.5, "end_sec": 26.0, "description": "Individual in dark hoodie walks from tree line toward north perimeter fence", "modality": "video"},
+      {"event_id": "SURV-01-E2", "label": "Fence Wire Cut Acoustic Event", "start_sec": 38.0, "end_sec": 44.5, "description": "Metallic wire snapping sound and chainlink fence vibration", "modality": "audiovisual"},
+      {"event_id": "SURV-01-E3", "label": "Compound Boundary Intrusion", "start_sec": 49.0, "end_sec": 62.0, "description": "Suspect climbs through severed fence gap onto warehouse tarmac", "modality": "video"},
+      {"event_id": "SURV-01-E4", "label": "Security Spotlight Strobe Onset", "start_sec": 71.2, "end_sec": 78.0, "description": "Automated motion detector triggers high-intensity strobe light", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "SURV-02",
+    "domain": "Surveillance_Security",
+    "title": "Unauthorized Server Room Access",
+    "duration_sec": 90.0,
+    "fps": 30.0,
+    "query_prompt": "Identify keycard badge swipe, door latch click, and server rack tampering.",
+    "ground_truth_events": [
+      {"event_id": "SURV-02-E1", "label": "Badge Reader Beep & Scan", "start_sec": 12.0, "end_sec": 16.5, "description": "Individual swipes counterfeit NFC card; reader emits double chime", "modality": "audiovisual"},
+      {"event_id": "SURV-02-E2", "label": "Maglock Disengage & Door Push", "start_sec": 18.0, "end_sec": 24.0, "description": "Heavy magnetic lock unlocks and door swings open into hallway", "modality": "audiovisual"},
+      {"event_id": "SURV-02-E3", "label": "Rack Cabinet USB Drive Insertion", "start_sec": 42.0, "end_sec": 55.0, "description": "Subject opens rack 4B and inserts hardware dongle into SAN switch", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "SURV-03",
+    "domain": "Surveillance_Security",
+    "title": "Terminal Unattended Baggage Drop",
+    "duration_sec": 180.0,
+    "fps": 30.0,
+    "query_prompt": "Locate when the duffel bag is placed down and when the owner exits camera view.",
+    "ground_truth_events": [
+      {"event_id": "SURV-03-E1", "label": "Subject Sitting at Gate Bench", "start_sec": 22.0, "end_sec": 38.0, "description": "Passenger with black rolling bag sits in terminal waiting area", "modality": "video"},
+      {"event_id": "SURV-03-E2", "label": "Bag Placed Under Seat", "start_sec": 65.0, "end_sec": 74.0, "description": "Subject lowers black duffel bag onto floor beneath chair", "modality": "video"},
+      {"event_id": "SURV-03-E3", "label": "Rapid Departure Without Bag", "start_sec": 88.0, "end_sec": 102.0, "description": "Individual stands up without luggage and walks rapidly toward exit corridor", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "SURV-04",
+    "domain": "Surveillance_Security",
+    "title": "Loading Dock Forced Entry",
+    "duration_sec": 75.0,
+    "fps": 30.0,
+    "query_prompt": "Pinpoint crowbar strike and roller door mechanical lifting.",
+    "ground_truth_events": [
+      {"event_id": "SURV-04-E1", "label": "Crowbar Impact on Lock Hasp", "start_sec": 18.2, "end_sec": 23.5, "description": "Audible metallic clang as tool strikes padlock shackle", "modality": "audiovisual"},
+      {"event_id": "SURV-04-E2", "label": "Roller Door Mechanical Squeal", "start_sec": 31.0, "end_sec": 45.0, "description": "Heavy industrial steel shutter rolls upward with grinding sound", "modality": "audiovisual"},
+      {"event_id": "SURV-04-E3", "label": "Pallet Jack Movement", "start_sec": 52.0, "end_sec": 68.0, "description": "Two individuals pull manual pallet jack into trailer bed", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "SURV-05",
+    "domain": "Surveillance_Security",
+    "title": "Parking Structure Vehicle Vandalism",
+    "duration_sec": 240.0,
+    "fps": 30.0,
+    "query_prompt": "Find glass break acoustic pulse and car alarm siren start.",
+    "ground_truth_events": [
+      {"event_id": "SURV-05-E1", "label": "Flashlight Beam Across Windows", "start_sec": 45.0, "end_sec": 58.0, "description": "Narrow light beam sweeps across interior of parked SUV", "modality": "video"},
+      {"event_id": "SURV-05-E2", "label": "Tempered Glass Window Shatter", "start_sec": 92.4, "end_sec": 96.0, "description": "Punched center punch shatters rear passenger window with loud pop", "modality": "audiovisual"},
+      {"event_id": "SURV-05-E3", "label": "Vehicle Horn Siren Pulsing", "start_sec": 96.5, "end_sec": 135.0, "description": "Automotive alarm horn honks repeatedly with flashing hazard lamps", "modality": "audiovisual"}
+    ]
+  },
+  {
+    "video_id": "AUTO-01",
+    "domain": "Autonomous_Driving",
+    "title": "Foggy Crosswalk Pedestrian Jaywalking",
+    "duration_sec": 45.0,
+    "fps": 30.0,
+    "query_prompt": "Locate pedestrian emergence from fog, vehicle brake deceleration, and pedestrian curb arrival.",
+    "ground_truth_events": [
+      {"event_id": "AUTO-01-E1", "label": "Pedestrian Silhouette Emerges", "start_sec": 11.2, "end_sec": 17.0, "description": "Dark figure becomes visible through 40-meter heavy fog layer", "modality": "video"},
+      {"event_id": "AUTO-01-E2", "label": "Emergency ABS Braking Event", "start_sec": 18.0, "end_sec": 24.5, "description": "Tire friction chirp and vehicle nose pitch down deceleration", "modality": "audiovisual"},
+      {"event_id": "AUTO-01-E3", "label": "Pedestrian Steps Onto Sidewalk", "start_sec": 26.0, "end_sec": 31.5, "description": "Pedestrian finishes crossing traffic lane and reaches eastern sidewalk", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "AUTO-02",
+    "domain": "Autonomous_Driving",
+    "title": "Emergency Vehicle Siren Yield",
+    "duration_sec": 60.0,
+    "fps": 30.0,
+    "query_prompt": "Find first audible acoustic siren detection, rearview mirror light reflection, and lane pull-over.",
+    "ground_truth_events": [
+      {"event_id": "AUTO-02-E1", "label": "Acoustic Siren Doppler Onset", "start_sec": 8.5, "end_sec": 16.0, "description": "Faint high-low ambulance siren tone detected in cabin audio", "modality": "audio"},
+      {"event_id": "AUTO-02-E2", "label": "Emergency Strobe in Mirrors", "start_sec": 20.0, "end_sec": 29.0, "description": "Red and blue flashing reflection visible in center and side mirrors", "modality": "video"},
+      {"event_id": "AUTO-02-E3", "label": "Right Shoulder Pull-Over Maneuver", "start_sec": 28.5, "end_sec": 41.0, "description": "Vehicle indicates right blinker and comes to complete stop on gravel shoulder", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "AUTO-03",
+    "domain": "Autonomous_Driving",
+    "title": "Highway Cargo Debris Avoidance",
+    "duration_sec": 30.0,
+    "fps": 30.0,
+    "query_prompt": "Locate ladder falling from pickup truck and autonomous swerve initiation.",
+    "ground_truth_events": [
+      {"event_id": "AUTO-03-E1", "label": "Ladder Detaches From Truck", "start_sec": 6.2, "end_sec": 10.0, "description": "Aluminum ladder slips off roof rack of lead vehicle and hits asphalt", "modality": "audiovisual"},
+      {"event_id": "AUTO-03-E2", "label": "Autonomous Lane Swerve", "start_sec": 10.8, "end_sec": 15.5, "description": "Steering angle rapidly shifts 18 degrees left to clear obstacle", "modality": "video"},
+      {"event_id": "AUTO-03-E3", "label": "Lane Re-Centering Stabilization", "start_sec": 16.0, "end_sec": 21.0, "description": "Vehicle smoothly returns to center of lane 2 at 65 mph", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "AUTO-04",
+    "domain": "Autonomous_Driving",
+    "title": "Blind Spot Cyclist Cut-In",
+    "duration_sec": 40.0,
+    "fps": 30.0,
+    "query_prompt": "Pinpoint cyclist bell ring, blind spot proximity warning, and gentle deceleration.",
+    "ground_truth_events": [
+      {"event_id": "AUTO-04-E1", "label": "Acoustic Bicycle Bell Ring", "start_sec": 9.0, "end_sec": 12.0, "description": "Sharp brass bell ring from adjacent bike lane", "modality": "audio"},
+      {"event_id": "AUTO-04-E2", "label": "Cyclist Enters Front Right Blindspot", "start_sec": 13.5, "end_sec": 20.0, "description": "Commuter bicycle cuts across vehicle front right bumper", "modality": "video"},
+      {"event_id": "AUTO-04-E3", "label": "Automatic Braking Deceleration", "start_sec": 18.0, "end_sec": 25.0, "description": "Forward collision system applies 35% regenerative braking", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "AUTO-05",
+    "domain": "Autonomous_Driving",
+    "title": "Intersection Amber-to-Red Emergency Stop",
+    "duration_sec": 35.0,
+    "fps": 30.0,
+    "query_prompt": "Find yellow light change, red light onset, and stop bar alignment.",
+    "ground_truth_events": [
+      {"event_id": "AUTO-05-E1", "label": "Traffic Signal Changes Amber", "start_sec": 7.0, "end_sec": 11.0, "description": "Overhead green arrow transitions to solid amber light", "modality": "video"},
+      {"event_id": "AUTO-05-E2", "label": "Traffic Signal Changes Red", "start_sec": 11.2, "end_sec": 15.0, "description": "Amber signal turns red as vehicle approaches 20m from stop line", "modality": "video"},
+      {"event_id": "AUTO-05-E3", "label": "Vehicle Stops at White Limit Line", "start_sec": 17.5, "end_sec": 24.0, "description": "Full stop achieved 1.2 meters before intersection limit line", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "MED-01",
+    "domain": "Medical_Surgical",
+    "title": "Laparoscopic Cholecystectomy Trocar Insertion",
+    "duration_sec": 150.0,
+    "fps": 30.0,
+    "query_prompt": "Locate umbilical incision, Veress needle insertion, and 10mm primary trocar placement.",
+    "ground_truth_events": [
+      {"event_id": "MED-01-E1", "label": "Scalpel Cut Umbilical Margin", "start_sec": 18.0, "end_sec": 28.5, "description": "Surgeon makes infraumbilical skin incision with #11 blade", "modality": "video"},
+      {"event_id": "MED-01-E2", "label": "Pneumoperitoneum Insufflation Hiss", "start_sec": 42.0, "end_sec": 58.0, "description": "CO2 gas insufflation starts with high-flow valve hiss sound", "modality": "audiovisual"},
+      {"event_id": "MED-01-E3", "label": "Optical Trocar Abdominal Wall Penetration", "start_sec": 72.0, "end_sec": 89.0, "description": "Bladeless optical trocar dissects fascial layers under camera view", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "MED-02",
+    "domain": "Medical_Surgical",
+    "title": "Robotic Suture Knot Tying Sequence",
+    "duration_sec": 80.0,
+    "fps": 30.0,
+    "query_prompt": "Identify needle pass through tissue, first surgeon loop, and square knot cinch.",
+    "ground_truth_events": [
+      {"event_id": "MED-02-E1", "label": "Curved Needle Tissue Penetration", "start_sec": 10.5, "end_sec": 21.0, "description": "Robotic needle driver drives 3-0 vicryl needle across fascial edge", "modality": "video"},
+      {"event_id": "MED-02-E2", "label": "Double Loop Suture Wrap", "start_sec": 28.0, "end_sec": 41.0, "description": "Articulated robotic wrist wraps suture twice around auxiliary grasper", "modality": "video"},
+      {"event_id": "MED-02-E3", "label": "Knot Cinch & Tension Check", "start_sec": 46.0, "end_sec": 59.0, "description": "Square knot is drawn flat with tactile tension verification", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "MED-03",
+    "domain": "Medical_Surgical",
+    "title": "Colonoscopic Polyp Snare Electrocautery",
+    "duration_sec": 110.0,
+    "fps": 30.0,
+    "query_prompt": "Locate snare wire loop deployment, stalk capture, and monopolar cautery tone.",
+    "ground_truth_events": [
+      {"event_id": "MED-03-E1", "label": "Snare Wire Loop Extrusion", "start_sec": 22.0, "end_sec": 35.0, "description": "Polypectomy wire loop emerges from catheter tip into lumen", "modality": "video"},
+      {"event_id": "MED-03-E2", "label": "Pedunculated Stalk Closure", "start_sec": 44.0, "end_sec": 58.0, "description": "Wire loop snugs around 8mm adenoma stalk", "modality": "video"},
+      {"event_id": "MED-03-E3", "label": "Coagulation Generator Tone & Resection", "start_sec": 65.2, "end_sec": 73.0, "description": "Audible electrical buzzing generator chime and tissue transection", "modality": "audiovisual"}
+    ]
+  },
+  {
+    "video_id": "MED-04",
+    "domain": "Medical_Surgical",
+    "title": "Emergency Chest Tube Thoracostomy",
+    "duration_sec": 190.0,
+    "fps": 30.0,
+    "query_prompt": "Find blunt pleural space puncture, tube insertion, and air bubble rush.",
+    "ground_truth_events": [
+      {"event_id": "MED-04-E1", "label": "Kelly Clamp Pleural Puncture", "start_sec": 45.0, "end_sec": 58.0, "description": "Blunt dissection pops through parietal pleura into pleural space", "modality": "audiovisual"},
+      {"event_id": "MED-04-E2", "label": "Chest Tube Advancement", "start_sec": 75.0, "end_sec": 95.0, "description": "32 French silicone chest tube guided posteriorly and apically", "modality": "video"},
+      {"event_id": "MED-04-E3", "label": "Water Seal Chamber Air Rush", "start_sec": 105.0, "end_sec": 120.0, "description": "Bubbling sound and visible mist condensation in drainage tubing", "modality": "audiovisual"}
+    ]
+  },
+  {
+    "video_id": "MED-05",
+    "domain": "Medical_Surgical",
+    "title": "Phacoemulsification Cataract Lens Extraction",
+    "duration_sec": 130.0,
+    "fps": 30.0,
+    "query_prompt": "Locate capsulorhexis tear initiation, ultrasonic probe activation, and lens aspiration.",
+    "ground_truth_events": [
+      {"event_id": "MED-05-E1", "label": "Continuous Curvilinear Capsulorhexis", "start_sec": 24.0, "end_sec": 42.0, "description": "Cystotome creates circular tear in anterior lens capsule", "modality": "video"},
+      {"event_id": "MED-05-E2", "label": "Phaco Ultrasound High-Pitch Whine", "start_sec": 55.0, "end_sec": 78.0, "description": "High-frequency ultrasonic handpiece fragments nuclear core", "modality": "audiovisual"},
+      {"event_id": "MED-05-E3", "label": "Foldable IOL Injector Deployment", "start_sec": 94.0, "end_sec": 112.0, "description": "Intraocular lens unrolls inside capsular bag", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "SPORT-01",
+    "domain": "Sports_Athletics",
+    "title": "Basketball Fast Break Buzzer Beater",
+    "duration_sec": 25.0,
+    "fps": 30.0,
+    "query_prompt": "Find defensive steal, fast break sprint, release before buzzer, and net swish.",
+    "ground_truth_events": [
+      {"event_id": "SPORT-01-E1", "label": "Defensive Ball Strip Steal", "start_sec": 2.1, "end_sec": 5.0, "description": "Guard knocks ball away from ball-handler at top of key", "modality": "video"},
+      {"event_id": "SPORT-01-E2", "label": "Jump Shot Release Before Horn", "start_sec": 18.2, "end_sec": 20.0, "description": "Player jumps and releases 3-point attempt 0.4s before red backboard light", "modality": "video"},
+      {"event_id": "SPORT-01-E3", "label": "Game Clock Buzzer Acoustic Blast", "start_sec": 20.1, "end_sec": 22.5, "description": "Arena game horn sounds as ball travels mid-air", "modality": "audiovisual"},
+      {"event_id": "SPORT-01-E4", "label": "Ball Clears Rim & Net Swish", "start_sec": 22.8, "end_sec": 24.5, "description": "Shot drops cleanly through nylon net for game winning points", "modality": "audiovisual"}
+    ]
+  },
+  {
+    "video_id": "SPORT-02",
+    "domain": "Sports_Athletics",
+    "title": "Soccer Penalty Kick & Goalkeeper Save",
+    "duration_sec": 30.0,
+    "fps": 30.0,
+    "query_prompt": "Identify referee whistle blow, striker ball strike, and keeper fingertip deflection.",
+    "ground_truth_events": [
+      {"event_id": "SPORT-02-E1", "label": "Referee Whistle Blow For Kick", "start_sec": 8.0, "end_sec": 10.5, "description": "Sharp high-frequency referee whistle signals permission to shoot", "modality": "audiovisual"},
+      {"event_id": "SPORT-02-E2", "label": "Striker Boot Strike on Ball", "start_sec": 14.8, "end_sec": 16.5, "description": "Player strikes ball toward bottom right corner with audible thud", "modality": "audiovisual"},
+      {"event_id": "SPORT-02-E3", "label": "Goalkeeper Diving Glove Tip", "start_sec": 16.6, "end_sec": 18.5, "description": "Keeper dives laterally pushing ball wide off goal post", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "SPORT-03",
+    "domain": "Sports_Athletics",
+    "title": "Tennis Baseline Rally & Hawk-Eye Review",
+    "duration_sec": 55.0,
+    "fps": 30.0,
+    "query_prompt": "Find baseline forehand winner, line judge out call, and hawk-eye graphic onset.",
+    "ground_truth_events": [
+      {"event_id": "SPORT-03-E1", "label": "Down-The-Line Forehand Drive", "start_sec": 15.0, "end_sec": 18.2, "description": "Player executes heavy topspin inside-out forehand shot", "modality": "audiovisual"},
+      {"event_id": "SPORT-03-E2", "label": "Line Judge Acoustic 'OUT' Call", "start_sec": 18.5, "end_sec": 21.0, "description": "Loud verbal 'OUT' exclamation from baseline line umpire", "modality": "audio"},
+      {"event_id": "SPORT-03-E3", "label": "Hawk-Eye 3D Trajectory Animation", "start_sec": 31.0, "end_sec": 42.0, "description": "Broadcast screen displays virtual ball landing 2mm inside baseline chalk", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "SPORT-04",
+    "domain": "Sports_Athletics",
+    "title": "Olympic 100m Dash Start to Finish",
+    "duration_sec": 20.0,
+    "fps": 30.0,
+    "query_prompt": "Locate starting block set command, gun bang acoustic blast, and chest tape break.",
+    "ground_truth_events": [
+      {"event_id": "SPORT-04-E1", "label": "Starter 'SET' Vocal Command", "start_sec": 2.0, "end_sec": 4.5, "description": "Official starter commands runners to raise hips in blocks", "modality": "audiovisual"},
+      {"event_id": "SPORT-04-E2", "label": "Starting Pistol Gunshot Impulse", "start_sec": 6.8, "end_sec": 8.0, "description": "Acoustic gunshot bang accompanied by smoke puff from muzzle", "modality": "audiovisual"},
+      {"event_id": "SPORT-04-E3", "label": "First Runner Crosses Finish Line", "start_sec": 16.7, "end_sec": 18.5, "description": "Sprinter in lane 4 leans torso across white finish line in 9.81s", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "SPORT-05",
+    "domain": "Sports_Athletics",
+    "title": "Baseball Pitch & Double Play Turn",
+    "duration_sec": 40.0,
+    "fps": 30.0,
+    "query_prompt": "Pinpoint fastball pitch, wood bat crack, and second base tag throw.",
+    "ground_truth_events": [
+      {"event_id": "SPORT-05-E1", "label": "Pitcher Windup & Fastball Release", "start_sec": 8.0, "end_sec": 11.2, "description": "Right-handed pitcher throws 97mph four-seam fastball", "modality": "video"},
+      {"event_id": "SPORT-05-E2", "label": "Ash Bat Crack on Ball", "start_sec": 11.4, "end_sec": 13.0, "description": "Sharp acoustic crack of wooden bat hitting baseball", "modality": "audiovisual"},
+      {"event_id": "SPORT-05-E3", "label": "Shortstop Glove to Second Base Pivot", "start_sec": 14.5, "end_sec": 18.0, "description": "Infielder fields ground ball and flips to second baseman for force out", "modality": "video"},
+      {"event_id": "SPORT-05-E4", "label": "First Baseman Scoop & Out Call", "start_sec": 18.5, "end_sec": 22.0, "description": "Throw reaches first base glove beating runner by half a step", "modality": "audiovisual"}
+    ]
+  },
+  {
+    "video_id": "POD-01",
+    "domain": "Podcast_Dialogue",
+    "title": "Two-Host AI Ethics Debate & Cross-Talk",
+    "duration_sec": 300.0,
+    "fps": 30.0,
+    "query_prompt": "Identify host 1 speech opening, host 2 interruption start, and shared laughter burst.",
+    "ground_truth_events": [
+      {"event_id": "POD-01-E1", "label": "Host 1 Opening Argument", "start_sec": 15.0, "end_sec": 42.0, "description": "Left speaker introduces European AI Act enforcement timelines", "modality": "audiovisual"},
+      {"event_id": "POD-01-E2", "label": "Host 2 Overlapping Interruption", "start_sec": 39.5, "end_sec": 52.0, "description": "Right speaker interrupts mid-sentence creating overlapping acoustic waveform", "modality": "audio"},
+      {"event_id": "POD-01-E3", "label": "Mutual Laughter Burst", "start_sec": 110.0, "end_sec": 122.5, "description": "Both hosts laugh simultaneously following joke about GPU cluster costs", "modality": "audiovisual"}
+    ]
+  },
+  {
+    "video_id": "POD-02",
+    "domain": "Podcast_Dialogue",
+    "title": "Technical Slide Presentation Transition",
+    "duration_sec": 210.0,
+    "fps": 30.0,
+    "query_prompt": "Locate slide 1 to slide 2 transition, laser pointer circle, and live terminal screen share.",
+    "ground_truth_events": [
+      {"event_id": "POD-02-E1", "label": "Slide Deck Architecture Transition", "start_sec": 28.0, "end_sec": 33.0, "description": "Presentation flips from title slide to transformer block diagram", "modality": "video"},
+      {"event_id": "POD-02-E2", "label": "Laser Pointer Attention Weights Circle", "start_sec": 65.0, "end_sec": 78.0, "description": "Digital red dot circles multi-head cross-attention layer on diagram", "modality": "video"},
+      {"event_id": "POD-02-E3", "label": "Screen Switch to VS Code Terminal", "start_sec": 115.0, "end_sec": 125.0, "description": "Speaker minimizes slides and switches desktop capture to IDE terminal", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "POD-03",
+    "domain": "Podcast_Dialogue",
+    "title": "Guest Interview Mic Mute Drop",
+    "duration_sec": 180.0,
+    "fps": 30.0,
+    "query_prompt": "Find guest microphone cough drop, host apology phrase, and audio restabilization.",
+    "ground_truth_events": [
+      {"event_id": "POD-03-E1", "label": "Sudden Acoustic Cough & Silence", "start_sec": 32.0, "end_sec": 37.0, "description": "Guest coughs and abruptly engages hardware mute switch", "modality": "audio"},
+      {"event_id": "POD-03-E2", "label": "Host Verbal Filler 'Are you there?'", "start_sec": 38.5, "end_sec": 46.0, "description": "Host pauses and asks if guest connection is intact", "modality": "audiovisual"},
+      {"event_id": "POD-03-E3", "label": "Guest Unmutes & Resumes Speech", "start_sec": 48.0, "end_sec": 70.0, "description": "Guest reappears with normal voice level apologizing for dry throat", "modality": "audiovisual"}
+    ]
+  },
+  {
+    "video_id": "POD-04",
+    "domain": "Podcast_Dialogue",
+    "title": "Hardware VR Headset Unboxing",
+    "duration_sec": 240.0,
+    "fps": 30.0,
+    "query_prompt": "Locate plastic wrap peel sound, box lid opening, and headset lift to camera.",
+    "ground_truth_events": [
+      {"event_id": "POD-04-E1", "label": "Plastic Cellophane Tear Sound", "start_sec": 25.0, "end_sec": 34.0, "description": "Acoustic crinkle of plastic wrapper being removed from retail packaging", "modality": "audiovisual"},
+      {"event_id": "POD-04-E2", "label": "Cardboard Box Lid Slide Off", "start_sec": 42.0, "end_sec": 51.0, "description": "Host lifts magnetic box lid revealing contoured interior cradle", "modality": "video"},
+      {"event_id": "POD-04-E3", "label": "VR Headset Held Up to Lens", "start_sec": 62.0, "end_sec": 80.0, "description": "Device lifted into close-up macro lens to display front glass curvature", "modality": "video"}
+    ]
+  },
+  {
+    "video_id": "POD-05",
+    "domain": "Podcast_Dialogue",
+    "title": "Conference Keynote Q&A Audience Handoff",
+    "duration_sec": 270.0,
+    "fps": 30.0,
+    "query_prompt": "Find speaker concluding words, audience applause wave, and runner hand mic to attendee.",
+    "ground_truth_events": [
+      {"event_id": "POD-05-E1", "label": "Speaker Concluding 'Thank You' Phrase", "start_sec": 12.0, "end_sec": 16.5, "description": "Presenter says thank you very much and steps away from lectern", "modality": "audiovisual"},
+      {"event_id": "POD-05-E2", "label": "Auditorium Clapping & Applause Swell", "start_sec": 17.0, "end_sec": 32.0, "description": "Broad acoustic reverberation of 500 audience members applauding", "modality": "audio"},
+      {"event_id": "POD-05-E3", "label": "Wireless Handheld Mic Transferred", "start_sec": 48.0, "end_sec": 58.0, "description": "Floor runner hands Shure SM58 microphone to attendee in row 3", "modality": "video"}
+    ]
+  }
+]

@@ -1,0 +1,1014 @@
+{
+  "total_scenarios": 25,
+  "total_events": 78,
+  "tiers_evaluated": [
+    "Uniform_Sample_Baseline",
+    "Dense_Frame_Captioner",
+    "Audio_Visual_Cross_Attention",
+    "TemporalGrounding_Sentinel"
+  ],
+  "metrics_by_tier": {
+    "Uniform_Sample_Baseline": {
+      "model_tier": "Uniform_Sample_Baseline",
+      "mean_tiou": 55.3,
+      "recall_at_1_iou_03": 73.1,
+      "recall_at_1_iou_05": 65.4,
+      "recall_at_1_iou_07": 43.6,
+      "temporal_hallucination_rate": 10.3,
+      "boundary_jitter_sec": 3.19,
+      "ordering_accuracy": 88.0,
+      "avg_latency_ms": 0.05,
+      "domain_miou": {
+        "Surveillance_Security": 66.1,
+        "Autonomous_Driving": 55.4,
+        "Medical_Surgical": 72.7,
+        "Sports_Athletics": 17.5,
+        "Podcast_Dialogue": 68.9
+      },
+      "duration_miou": {
+        "short (<30s)": 4.9,
+        "medium (30-180s)": 56.3,
+        "long (>180s)": 71.8
+      }
+    },
+    "Dense_Frame_Captioner": {
+      "model_tier": "Dense_Frame_Captioner",
+      "mean_tiou": 69.7,
+      "recall_at_1_iou_03": 94.9,
+      "recall_at_1_iou_05": 80.8,
+      "recall_at_1_iou_07": 62.8,
+      "temporal_hallucination_rate": 0.0,
+      "boundary_jitter_sec": 1.26,
+      "ordering_accuracy": 100.0,
+      "avg_latency_ms": 0.03,
+      "domain_miou": {
+        "Surveillance_Security": 78.4,
+        "Autonomous_Driving": 68.0,
+        "Medical_Surgical": 85.9,
+        "Sports_Athletics": 41.8,
+        "Podcast_Dialogue": 77.6
+      },
+      "duration_miou": {
+        "short (<30s)": 32.5,
+        "medium (30-180s)": 70.6,
+        "long (>180s)": 81.7
+      }
+    },
+    "Audio_Visual_Cross_Attention": {
+      "model_tier": "Audio_Visual_Cross_Attention",
+      "mean_tiou": 85.6,
+      "recall_at_1_iou_03": 98.7,
+      "recall_at_1_iou_05": 97.4,
+      "recall_at_1_iou_07": 92.3,
+      "temporal_hallucination_rate": 0.0,
+      "boundary_jitter_sec": 0.46,
+      "ordering_accuracy": 100.0,
+      "avg_latency_ms": 0.04,
+      "domain_miou": {
+        "Surveillance_Security": 89.7,
+        "Autonomous_Driving": 85.0,
+        "Medical_Surgical": 93.3,
+        "Sports_Athletics": 70.3,
+        "Podcast_Dialogue": 91.7
+      },
+      "duration_miou": {
+        "short (<30s)": 72.1,
+        "medium (30-180s)": 85.3,
+        "long (>180s)": 92.0
+      }
+    },
+    "TemporalGrounding_Sentinel": {
+      "model_tier": "TemporalGrounding_Sentinel",
+      "mean_tiou": 94.9,
+      "recall_at_1_iou_03": 100.0,
+      "recall_at_1_iou_05": 100.0,
+      "recall_at_1_iou_07": 100.0,
+      "temporal_hallucination_rate": 0.0,
+      "boundary_jitter_sec": 0.14,
+      "ordering_accuracy": 100.0,
+      "avg_latency_ms": 0.03,
+      "domain_miou": {
+        "Surveillance_Security": 96.5,
+        "Autonomous_Driving": 95.1,
+        "Medical_Surgical": 98.1,
+        "Sports_Athletics": 88.6,
+        "Podcast_Dialogue": 96.9
+      },
+      "duration_miou": {
+        "short (<30s)": 86.8,
+        "medium (30-180s)": 95.2,
+        "long (>180s)": 97.2
+      }
+    }
+  },
+  "scenario_results": {
+    "Uniform_Sample_Baseline": [
+      {
+        "video_id": "SURV-01",
+        "domain": "Surveillance_Security",
+        "duration_sec": 120.0,
+        "events_count": 4,
+        "mean_tiou": 0.6269,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.09
+      },
+      {
+        "video_id": "SURV-02",
+        "domain": "Surveillance_Security",
+        "duration_sec": 90.0,
+        "events_count": 3,
+        "mean_tiou": 0.5514,
+        "ordering_accuracy": 66.7,
+        "latency_ms": 0.06
+      },
+      {
+        "video_id": "SURV-03",
+        "domain": "Surveillance_Security",
+        "duration_sec": 180.0,
+        "events_count": 3,
+        "mean_tiou": 0.8048,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.04
+      },
+      {
+        "video_id": "SURV-04",
+        "domain": "Surveillance_Security",
+        "duration_sec": 75.0,
+        "events_count": 3,
+        "mean_tiou": 0.6504,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.04
+      },
+      {
+        "video_id": "SURV-05",
+        "domain": "Surveillance_Security",
+        "duration_sec": 240.0,
+        "events_count": 3,
+        "mean_tiou": 0.6845,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.04
+      },
+      {
+        "video_id": "AUTO-01",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 45.0,
+        "events_count": 3,
+        "mean_tiou": 0.4952,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "AUTO-02",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 60.0,
+        "events_count": 3,
+        "mean_tiou": 0.6889,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.04
+      },
+      {
+        "video_id": "AUTO-03",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 30.0,
+        "events_count": 3,
+        "mean_tiou": 0.5745,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "AUTO-04",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 40.0,
+        "events_count": 3,
+        "mean_tiou": 0.5374,
+        "ordering_accuracy": 66.7,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "AUTO-05",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 35.0,
+        "events_count": 3,
+        "mean_tiou": 0.4728,
+        "ordering_accuracy": 66.7,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "MED-01",
+        "domain": "Medical_Surgical",
+        "duration_sec": 150.0,
+        "events_count": 3,
+        "mean_tiou": 0.6798,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "MED-02",
+        "domain": "Medical_Surgical",
+        "duration_sec": 80.0,
+        "events_count": 3,
+        "mean_tiou": 0.6086,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.04
+      },
+      {
+        "video_id": "MED-03",
+        "domain": "Medical_Surgical",
+        "duration_sec": 110.0,
+        "events_count": 3,
+        "mean_tiou": 0.6548,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "MED-04",
+        "domain": "Medical_Surgical",
+        "duration_sec": 190.0,
+        "events_count": 3,
+        "mean_tiou": 0.8444,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "MED-05",
+        "domain": "Medical_Surgical",
+        "duration_sec": 130.0,
+        "events_count": 3,
+        "mean_tiou": 0.8463,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "SPORT-01",
+        "domain": "Sports_Athletics",
+        "duration_sec": 25.0,
+        "events_count": 4,
+        "mean_tiou": 0.085,
+        "ordering_accuracy": 0.0,
+        "latency_ms": 0.04
+      },
+      {
+        "video_id": "SPORT-02",
+        "domain": "Sports_Athletics",
+        "duration_sec": 30.0,
+        "events_count": 3,
+        "mean_tiou": 0.2466,
+        "ordering_accuracy": 66.7,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "SPORT-03",
+        "domain": "Sports_Athletics",
+        "duration_sec": 55.0,
+        "events_count": 3,
+        "mean_tiou": 0.3833,
+        "ordering_accuracy": 66.7,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "SPORT-04",
+        "domain": "Sports_Athletics",
+        "duration_sec": 20.0,
+        "events_count": 3,
+        "mean_tiou": 0.0,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.04
+      },
+      {
+        "video_id": "SPORT-05",
+        "domain": "Sports_Athletics",
+        "duration_sec": 40.0,
+        "events_count": 4,
+        "mean_tiou": 0.1857,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "POD-01",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 300.0,
+        "events_count": 3,
+        "mean_tiou": 0.8358,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "POD-02",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 210.0,
+        "events_count": 3,
+        "mean_tiou": 0.6889,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "POD-03",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 180.0,
+        "events_count": 3,
+        "mean_tiou": 0.6681,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "POD-04",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 240.0,
+        "events_count": 3,
+        "mean_tiou": 0.763,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "POD-05",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 270.0,
+        "events_count": 3,
+        "mean_tiou": 0.4907,
+        "ordering_accuracy": 66.7,
+        "latency_ms": 0.05
+      }
+    ],
+    "Dense_Frame_Captioner": [
+      {
+        "video_id": "SURV-01",
+        "domain": "Surveillance_Security",
+        "duration_sec": 120.0,
+        "events_count": 4,
+        "mean_tiou": 0.7501,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.07
+      },
+      {
+        "video_id": "SURV-02",
+        "domain": "Surveillance_Security",
+        "duration_sec": 90.0,
+        "events_count": 3,
+        "mean_tiou": 0.6669,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "SURV-03",
+        "domain": "Surveillance_Security",
+        "duration_sec": 180.0,
+        "events_count": 3,
+        "mean_tiou": 0.8362,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SURV-04",
+        "domain": "Surveillance_Security",
+        "duration_sec": 75.0,
+        "events_count": 3,
+        "mean_tiou": 0.8199,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SURV-05",
+        "domain": "Surveillance_Security",
+        "duration_sec": 240.0,
+        "events_count": 3,
+        "mean_tiou": 0.8598,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "AUTO-01",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 45.0,
+        "events_count": 3,
+        "mean_tiou": 0.6946,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "AUTO-02",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 60.0,
+        "events_count": 3,
+        "mean_tiou": 0.8179,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.04
+      },
+      {
+        "video_id": "AUTO-03",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 30.0,
+        "events_count": 3,
+        "mean_tiou": 0.6406,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "AUTO-04",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 40.0,
+        "events_count": 3,
+        "mean_tiou": 0.593,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "AUTO-05",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 35.0,
+        "events_count": 3,
+        "mean_tiou": 0.6537,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "MED-01",
+        "domain": "Medical_Surgical",
+        "duration_sec": 150.0,
+        "events_count": 3,
+        "mean_tiou": 0.8509,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "MED-02",
+        "domain": "Medical_Surgical",
+        "duration_sec": 80.0,
+        "events_count": 3,
+        "mean_tiou": 0.8211,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "MED-03",
+        "domain": "Medical_Surgical",
+        "duration_sec": 110.0,
+        "events_count": 3,
+        "mean_tiou": 0.8291,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "MED-04",
+        "domain": "Medical_Surgical",
+        "duration_sec": 190.0,
+        "events_count": 3,
+        "mean_tiou": 0.8811,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "MED-05",
+        "domain": "Medical_Surgical",
+        "duration_sec": 130.0,
+        "events_count": 3,
+        "mean_tiou": 0.9121,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SPORT-01",
+        "domain": "Sports_Athletics",
+        "duration_sec": 25.0,
+        "events_count": 4,
+        "mean_tiou": 0.3424,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.04
+      },
+      {
+        "video_id": "SPORT-02",
+        "domain": "Sports_Athletics",
+        "duration_sec": 30.0,
+        "events_count": 3,
+        "mean_tiou": 0.3822,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.05
+      },
+      {
+        "video_id": "SPORT-03",
+        "domain": "Sports_Athletics",
+        "duration_sec": 55.0,
+        "events_count": 3,
+        "mean_tiou": 0.5383,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SPORT-04",
+        "domain": "Sports_Athletics",
+        "duration_sec": 20.0,
+        "events_count": 3,
+        "mean_tiou": 0.3009,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SPORT-05",
+        "domain": "Sports_Athletics",
+        "duration_sec": 40.0,
+        "events_count": 4,
+        "mean_tiou": 0.5163,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "POD-01",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 300.0,
+        "events_count": 3,
+        "mean_tiou": 0.8945,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "POD-02",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 210.0,
+        "events_count": 3,
+        "mean_tiou": 0.7638,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "POD-03",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 180.0,
+        "events_count": 3,
+        "mean_tiou": 0.7195,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "POD-04",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 240.0,
+        "events_count": 3,
+        "mean_tiou": 0.7884,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "POD-05",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 270.0,
+        "events_count": 3,
+        "mean_tiou": 0.7154,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      }
+    ],
+    "Audio_Visual_Cross_Attention": [
+      {
+        "video_id": "SURV-01",
+        "domain": "Surveillance_Security",
+        "duration_sec": 120.0,
+        "events_count": 4,
+        "mean_tiou": 0.8764,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.04
+      },
+      {
+        "video_id": "SURV-02",
+        "domain": "Surveillance_Security",
+        "duration_sec": 90.0,
+        "events_count": 3,
+        "mean_tiou": 0.8671,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SURV-03",
+        "domain": "Surveillance_Security",
+        "duration_sec": 180.0,
+        "events_count": 3,
+        "mean_tiou": 0.8893,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SURV-04",
+        "domain": "Surveillance_Security",
+        "duration_sec": 75.0,
+        "events_count": 3,
+        "mean_tiou": 0.945,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SURV-05",
+        "domain": "Surveillance_Security",
+        "duration_sec": 240.0,
+        "events_count": 3,
+        "mean_tiou": 0.9134,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "AUTO-01",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 45.0,
+        "events_count": 3,
+        "mean_tiou": 0.8543,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "AUTO-02",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 60.0,
+        "events_count": 3,
+        "mean_tiou": 0.9083,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "AUTO-03",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 30.0,
+        "events_count": 3,
+        "mean_tiou": 0.8336,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "AUTO-04",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 40.0,
+        "events_count": 3,
+        "mean_tiou": 0.8542,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "AUTO-05",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 35.0,
+        "events_count": 3,
+        "mean_tiou": 0.8003,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "MED-01",
+        "domain": "Medical_Surgical",
+        "duration_sec": 150.0,
+        "events_count": 3,
+        "mean_tiou": 0.9091,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "MED-02",
+        "domain": "Medical_Surgical",
+        "duration_sec": 80.0,
+        "events_count": 3,
+        "mean_tiou": 0.9256,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "MED-03",
+        "domain": "Medical_Surgical",
+        "duration_sec": 110.0,
+        "events_count": 3,
+        "mean_tiou": 0.9282,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "MED-04",
+        "domain": "Medical_Surgical",
+        "duration_sec": 190.0,
+        "events_count": 3,
+        "mean_tiou": 0.9549,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "MED-05",
+        "domain": "Medical_Surgical",
+        "duration_sec": 130.0,
+        "events_count": 3,
+        "mean_tiou": 0.9451,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.16
+      },
+      {
+        "video_id": "SPORT-01",
+        "domain": "Sports_Athletics",
+        "duration_sec": 25.0,
+        "events_count": 4,
+        "mean_tiou": 0.7945,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.04
+      },
+      {
+        "video_id": "SPORT-02",
+        "domain": "Sports_Athletics",
+        "duration_sec": 30.0,
+        "events_count": 3,
+        "mean_tiou": 0.5542,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SPORT-03",
+        "domain": "Sports_Athletics",
+        "duration_sec": 55.0,
+        "events_count": 3,
+        "mean_tiou": 0.8218,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SPORT-04",
+        "domain": "Sports_Athletics",
+        "duration_sec": 20.0,
+        "events_count": 3,
+        "mean_tiou": 0.6219,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SPORT-05",
+        "domain": "Sports_Athletics",
+        "duration_sec": 40.0,
+        "events_count": 4,
+        "mean_tiou": 0.6936,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.04
+      },
+      {
+        "video_id": "POD-01",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 300.0,
+        "events_count": 3,
+        "mean_tiou": 0.948,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "POD-02",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 210.0,
+        "events_count": 3,
+        "mean_tiou": 0.8881,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "POD-03",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 180.0,
+        "events_count": 3,
+        "mean_tiou": 0.9344,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "POD-04",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 240.0,
+        "events_count": 3,
+        "mean_tiou": 0.9203,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "POD-05",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 270.0,
+        "events_count": 3,
+        "mean_tiou": 0.8959,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      }
+    ],
+    "TemporalGrounding_Sentinel": [
+      {
+        "video_id": "SURV-01",
+        "domain": "Surveillance_Security",
+        "duration_sec": 120.0,
+        "events_count": 4,
+        "mean_tiou": 0.9672,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.04
+      },
+      {
+        "video_id": "SURV-02",
+        "domain": "Surveillance_Security",
+        "duration_sec": 90.0,
+        "events_count": 3,
+        "mean_tiou": 0.952,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SURV-03",
+        "domain": "Surveillance_Security",
+        "duration_sec": 180.0,
+        "events_count": 3,
+        "mean_tiou": 0.9685,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SURV-04",
+        "domain": "Surveillance_Security",
+        "duration_sec": 75.0,
+        "events_count": 3,
+        "mean_tiou": 0.9757,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SURV-05",
+        "domain": "Surveillance_Security",
+        "duration_sec": 240.0,
+        "events_count": 3,
+        "mean_tiou": 0.9595,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "AUTO-01",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 45.0,
+        "events_count": 3,
+        "mean_tiou": 0.9559,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "AUTO-02",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 60.0,
+        "events_count": 3,
+        "mean_tiou": 0.972,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "AUTO-03",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 30.0,
+        "events_count": 3,
+        "mean_tiou": 0.9356,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "AUTO-04",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 40.0,
+        "events_count": 3,
+        "mean_tiou": 0.9504,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "AUTO-05",
+        "domain": "Autonomous_Driving",
+        "duration_sec": 35.0,
+        "events_count": 3,
+        "mean_tiou": 0.9408,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "MED-01",
+        "domain": "Medical_Surgical",
+        "duration_sec": 150.0,
+        "events_count": 3,
+        "mean_tiou": 0.9781,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "MED-02",
+        "domain": "Medical_Surgical",
+        "duration_sec": 80.0,
+        "events_count": 3,
+        "mean_tiou": 0.9794,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "MED-03",
+        "domain": "Medical_Surgical",
+        "duration_sec": 110.0,
+        "events_count": 3,
+        "mean_tiou": 0.9782,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "MED-04",
+        "domain": "Medical_Surgical",
+        "duration_sec": 190.0,
+        "events_count": 3,
+        "mean_tiou": 0.9847,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "MED-05",
+        "domain": "Medical_Surgical",
+        "duration_sec": 130.0,
+        "events_count": 3,
+        "mean_tiou": 0.9868,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SPORT-01",
+        "domain": "Sports_Athletics",
+        "duration_sec": 25.0,
+        "events_count": 4,
+        "mean_tiou": 0.8692,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SPORT-02",
+        "domain": "Sports_Athletics",
+        "duration_sec": 30.0,
+        "events_count": 3,
+        "mean_tiou": 0.8674,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SPORT-03",
+        "domain": "Sports_Athletics",
+        "duration_sec": 55.0,
+        "events_count": 3,
+        "mean_tiou": 0.9582,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SPORT-04",
+        "domain": "Sports_Athletics",
+        "duration_sec": 20.0,
+        "events_count": 3,
+        "mean_tiou": 0.8667,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "SPORT-05",
+        "domain": "Sports_Athletics",
+        "duration_sec": 40.0,
+        "events_count": 4,
+        "mean_tiou": 0.8773,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "POD-01",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 300.0,
+        "events_count": 3,
+        "mean_tiou": 0.9857,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "POD-02",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 210.0,
+        "events_count": 3,
+        "mean_tiou": 0.9688,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "POD-03",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 180.0,
+        "events_count": 3,
+        "mean_tiou": 0.9615,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "POD-04",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 240.0,
+        "events_count": 3,
+        "mean_tiou": 0.9749,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      },
+      {
+        "video_id": "POD-05",
+        "domain": "Podcast_Dialogue",
+        "duration_sec": 270.0,
+        "events_count": 3,
+        "mean_tiou": 0.9564,
+        "ordering_accuracy": 100.0,
+        "latency_ms": 0.03
+      }
+    ]
+  }
+}
