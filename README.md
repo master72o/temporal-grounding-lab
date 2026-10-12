@@ -1,5 +1,6 @@
 # Temporal Grounding Lab: Multimodal Video & Audio Event Localization Benchmark
 
+[![CI](https://github.com/master72o/temporal-grounding-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/master72o/temporal-grounding-lab/actions/workflows/ci.yml)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Tests: 10/10 Passing](https://img.shields.io/badge/tests-10%2F10%20passing-brightgreen.svg)]()
