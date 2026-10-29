@@ -16,6 +16,9 @@ from temporalgrounding.metrics import (
     check_hallucination,
     compute_temporal_ordering_accuracy,
     evaluate_event_prediction,
+    compute_recall_auc,
+    diagnose_boundary_bias,
+    temporal_nms,
 )
 from temporalgrounding.pipeline import TemporalGroundingPipeline
 from temporalgrounding.evaluator import TemporalGroundingEvaluator
@@ -34,6 +37,9 @@ __all__ = [
     "check_hallucination",
     "compute_temporal_ordering_accuracy",
     "evaluate_event_prediction",
+    "compute_recall_auc",
+    "diagnose_boundary_bias",
+    "temporal_nms",
     "TemporalGroundingPipeline",
     "TemporalGroundingEvaluator",
     "TemporalGroundingVisualizer",

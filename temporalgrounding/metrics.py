@@ -138,3 +138,107 @@ def evaluate_event_prediction(
         end_error_sec=abs(pred.end_sec - gt.end_sec),
         jitter_sec=jitter,
     )
+
+
+def compute_recall_auc(
+    event_results: List[EventEvaluationResult],
+    thresholds: Optional[List[float]] = None,
+) -> Dict[str, Any]:
+    """
+    Computes the Recall@1 curve across multiple tIoU thresholds (default 0.1 to 0.9)
+    and integrates the Area Under the Recall-vs-tIoU Curve (R@1-AUC) via trapezoidal rule.
+    """
+    if thresholds is None:
+        thresholds = [round(0.1 * i, 1) for i in range(1, 10)]
+    if not event_results or not thresholds:
+        return {"auc": 0.0, "curve": {}}
+
+    n = len(event_results)
+    curve: Dict[float, float] = {}
+    recalls: List[float] = []
+    for tau in sorted(thresholds):
+        rec = sum(1 for e in event_results if e.tiou >= tau) / n
+        curve[tau] = round(rec, 4)
+        recalls.append(rec)
+
+    if len(thresholds) < 2:
+        auc = recalls[0]
+    else:
+        sorted_t = sorted(thresholds)
+        span = sorted_t[-1] - sorted_t[0]
+        trapz_sum = sum(
+            0.5 * (recalls[i] + recalls[i + 1]) * (sorted_t[i + 1] - sorted_t[i])
+            for i in range(len(sorted_t) - 1)
+        )
+        auc = trapz_sum / span if span > 0 else recalls[0]
+
+    return {"auc": round(float(auc), 4), "curve": curve}
+
+
+def diagnose_boundary_bias(
+    pred_start: float,
+    pred_end: float,
+    gt_start: float,
+    gt_end: float,
+    ratio_tol: float = 0.25,
+) -> str:
+    """
+    Classifies temporal boundary error modes into diagnostic categories:
+    - 'hallucinated_disjoint': zero overlap with ground truth
+    - 'over_extended': predicted duration is > (1 + ratio_tol) of ground truth
+    - 'under_extended': predicted duration is < (1 - ratio_tol) of ground truth
+    - 'early_shift': center shifted significantly earlier than ground truth
+    - 'late_shift': center shifted significantly later than ground truth
+    - 'tight_localization': high-precision boundary alignment
+    """
+    tiou = compute_tiou(pred_start, pred_end, gt_start, gt_end)
+    if tiou <= 0.0:
+        return "hallucinated_disjoint"
+
+    gt_dur = max(1e-3, gt_end - gt_start)
+    pred_dur = max(0.0, pred_end - pred_start)
+    dur_ratio = pred_dur / gt_dur
+
+    if dur_ratio > (1.0 + ratio_tol):
+        return "over_extended"
+    if dur_ratio < (1.0 - ratio_tol):
+        return "under_extended"
+
+    gt_center = 0.5 * (gt_start + gt_end)
+    pred_center = 0.5 * (pred_start + pred_end)
+    center_shift = (pred_center - gt_center) / gt_dur
+
+    if center_shift < -0.15:
+        return "early_shift"
+    if center_shift > 0.15:
+        return "late_shift"
+    return "tight_localization"
+
+
+def temporal_nms(
+    intervals: List[PredictedInterval],
+    iou_threshold: float = 0.5,
+) -> List[PredictedInterval]:
+    """
+    1D Temporal Non-Maximum Suppression (NMS).
+    Deduplicates overlapping candidate event proposals in descending confidence order.
+    """
+    if not intervals:
+        return []
+
+    sorted_candidates = sorted(intervals, key=lambda x: x.confidence, reverse=True)
+    kept: List[PredictedInterval] = []
+
+    while sorted_candidates:
+        best = sorted_candidates.pop(0)
+        kept.append(best)
+        remaining = []
+        for cand in sorted_candidates:
+            same_label = (not best.label or not cand.label or best.label == cand.label)
+            overlap = compute_tiou(best.start_sec, best.end_sec, cand.start_sec, cand.end_sec)
+            if same_label and overlap >= iou_threshold:
+                continue
+            remaining.append(cand)
+        sorted_candidates = remaining
+
+    return sorted(kept, key=lambda x: x.start_sec)
